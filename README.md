@@ -1,3 +1,3 @@
-# A ToDo app written with React
+# 7 Days of React
 
-Live View Here https://codepen.io/gulzarsuhail/pen/QXMEWb
+## Beginner react projects

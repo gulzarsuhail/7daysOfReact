@@ -1,0 +1,38 @@
+.menuStyle {
+    width: 100%;
+    background: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 0;
+    color: white;
+    align-items: center;
+}
+
+.logoStyle {
+    font-size: 25px;
+    padding: 15px;
+    cursor: default;
+    font-weight: 700;
+}
+
+.buttonStyle {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: background-color 250ms linear;
+    user-select: none;
+    position: relative;
+}
+
+.buttonStyle:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.buttonStyle:active {
+    top: 1px;
+}

@@ -6,7 +6,7 @@ const TodoCard = (props) => {
     const buttonText = (props.taskComplete) ? "delete" : "done";
     return (
         <div className="todoCard_container">
-            <div className="todoCard_text">
+            <div className={"todoCard_text todoCard_text_" + ((props.taskComplete)?"done":"undone")}>
                 { props.text }
             </div>
             <div className={"todo_card_button "+ buttonClass } onClick={props.handleTodoClick}>

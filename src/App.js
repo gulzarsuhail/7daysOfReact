@@ -24,10 +24,12 @@ class App extends Component {
   handleSubmit(e){
     e.preventDefault();
     this.setState({
-      todos: [...this.state.todos, {
+      todos: [
+        {
           text: this.state.newTodo,
           done: false
-        }
+        },
+        ...this.state.todos,
       ],
       newTodo: "",
     });

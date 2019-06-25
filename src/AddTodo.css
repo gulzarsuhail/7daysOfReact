@@ -1,0 +1,67 @@
+.addTodo_container {
+    width: 100%;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.addTodo_form {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    box-shadow: 2px;
+    box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
+}
+
+.addTodo_input {
+    flex-basis: 200px;
+    flex-grow: 9;
+    padding: 13px 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    font-size: 25px;
+    flex-shrink: 1;
+    outline: none;
+}
+
+.addTodo_button {
+    flex-shrink: 0;
+    flex-basis: 50px;
+    flex-grow: 0;
+    font-size: 20px;
+    background: #6096fa;
+    border: none;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline: none;
+}
+
+.addTodo_button:active {
+    background: #3c69bd;
+}
+
+@media only screen and (max-width: 430px){
+    .addTodo_form {
+        flex-direction: column;
+    }
+
+    .addTodo_input {
+        flex-basis: 30px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 5px;
+        font-size: 18px;
+        padding: 7px;
+    }
+
+    .addTodo_button {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        flex-basis: 30px;
+    }
+}

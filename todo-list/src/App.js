@@ -7,48 +7,39 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      todos: [],
+      todo_list: [],
       newTodo: "",
     }
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
     this.handleTodoClick = this.handleTodoClick.bind(this);
   }
 
-  handleChange(e){
+  handleSubmit(text){
     this.setState({
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  handleSubmit(e){
-    e.preventDefault();
-    this.setState({
-      todos: [
+      todo_list: [
         {
-          text: this.state.newTodo,
+          text: text,
           done: false
         },
-        ...this.state.todos,
-      ],
-      newTodo: "",
+        ...this.state.todo_list,
+      ]
     });
   }
 
   handleTodoClick(i){
-    const todos = this.state.todos.slice();
-    if (todos[i].done){
-      todos.splice(i, 1);
+    const todo_list = this.state.todo_list.slice();
+    if (todo_list[i].done){
+      todo_list.splice(i, 1);
     } else {
-      todos[i] = Object.assign({}, todos[i], {done: true});
+      todo_list[i] = Object.assign({}, todo_list[i], {done: true});
     }
     this.setState({
-      todos: todos,
+      todo_list: todo_list,
     })
   }
 
   render(){
-    const todoList = this.state.todos.map((current, index) => (
+    const todoList = this.state.todo_list.map((current, index) => (
       <TodoCard 
         text={current.text} 
         key={index}
@@ -58,7 +49,7 @@ class App extends Component {
     ))
     return (
       <div className="app_container">
-        <AddTodo handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.newTodo} />
+        <AddTodo handleSubmit={this.handleSubmit} />
         <div className="todoContainer">
           {todoList}
         </div>

@@ -7,7 +7,7 @@ class Game extends Component {
     constructor(props){
         super(props);
         this.state = {
-            board: this.genetateNewGameBoard(),
+            board: this.generateNewGameBoard(),
             clicked: {
                 one: null,
                 two: null
@@ -32,7 +32,6 @@ class Game extends Component {
             if (colorBoard[clickedColors.one] === colorBoard[clickedColors.two]){
                 colorBoard[clickedColors.one] = this.backgroundColor;
                 colorBoard[clickedColors.two] = this.backgroundColor;
-                this.setState({board: colorBoard});
             }
             this.setState({disableClick: true})
             setTimeout(()=>{
@@ -41,6 +40,7 @@ class Game extends Component {
                 this.setState({
                     clicked: clickedColors,
                     disableClick: false,
+                    board: colorBoard,
                 }, this.checkWin);
             }, 1000);
         }
@@ -48,7 +48,7 @@ class Game extends Component {
     }
 
     newGame(){
-        const board = this.genetateNewGameBoard();
+        const board = this.generateNewGameBoard();
         const clicked = {
             one: null,
             two: null
@@ -67,7 +67,7 @@ class Game extends Component {
         }
     }
 
-    genetateNewGameBoard(){
+    generateNewGameBoard(){
         const colors = ['red', 'navy', 'green', 'yellow', 'purple', 'pink', 'lightskyblue', 'white'];
         const colorArray = [];
         colors.forEach (color => {

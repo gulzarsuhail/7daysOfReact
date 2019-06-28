@@ -1,0 +1,42 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+    align-items: center;
+    flex-grow: 0;
+}
+
+.logo {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 3em;
+}
+
+.navbar_button {
+    padding: 15px 30px;
+    border: 2px white solid;
+    border-radius: 10px;
+    margin: 10px;
+    font-family: "Raleway", sans-serif;
+    transition: all 200ms;
+    background: transparent;
+    outline: none;
+    position: relative;
+}
+
+.is-active, .navbar_button:hover {
+    background: white;
+    color: rgba(0, 133, 138, 1);
+}
+
+.navbar_button:active {
+    top: 1px;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar_button {
+		padding: 10px 30px;
+    }
+}
